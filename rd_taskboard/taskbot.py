@@ -49,8 +49,6 @@ async def on_ready():
 def is_authorized(interaction: discord.Interaction):
     return interaction.user.get_role(ROLE_ID) is not None and interaction.channel.id == CHANNEL_ID
 
-# ... [other commands remain the same] ...
-
 @bot.tree.command(name="delete_card", description="Delete a card from a list")
 @app_commands.describe(board="Name of the board", list="Name of the list", card_index="Index of the card to delete (starting from 0)")
 async def delete_card(interaction: discord.Interaction, board: str, list: str, card_index: int):
